@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\eight_bit_int_gemm">
+      <UniqueIdentifier>{64dd3680-9592-4f47-9102-04f510605663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\internal">
+      <UniqueIdentifier>{dea982ef-f2ee-47b7-aea6-d61b4b1efea7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\meta">
+      <UniqueIdentifier>{28d64ab3-c33d-410d-9e5a-5613de466f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\profiling">
+      <UniqueIdentifier>{9127b312-43da-458d-8053-0febfcfc1d68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\public">
+      <UniqueIdentifier>{9fe1abc8-a929-4f26-88fc-02b7704e09a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\test">
+      <UniqueIdentifier>{1648ac3b-4063-4f91-866e-85266933e0dc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\eight_bit_int_gemm\eight_bit_int_gemm.cc">
+      <Filter>Source Files\eight_bit_int_gemm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\benchmark.cc">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\benchmark_meta_gemm.cc">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\correctness_meta_gemm.cc">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\test.cc">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\test_allocator.cc">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\test_blocking_counter.cc">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\test_data.cc">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\test_fixedpoint.cc">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+    <ClCompile Include="..\test\test_math_helpers.cc">
+      <Filter>Source Files\test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\eight_bit_int_gemm\eight_bit_int_gemm.h">
+      <Filter>Source Files\eight_bit_int_gemm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\allocator.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\block_params.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\common.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\compute.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\fixedpoint.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\fixedpoint_neon.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\iterator.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\kernel.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\kernel_default.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\kernel_neon.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\kernel_reference.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\kernel_SSE.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\multi_thread_gemm.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\output.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\output_neon.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\pack.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\pack_neon.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\pack_SSE.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\single_thread_gemm.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\unpack.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\internal\unpack_neon.h">
+      <Filter>Source Files\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\meta\multi_thread_common.h">
+      <Filter>Source Files\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\meta\multi_thread_gemm.h">
+      <Filter>Source Files\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\meta\multi_thread_gemv.h">
+      <Filter>Source Files\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\meta\operations_common.h">
+      <Filter>Source Files\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\meta\single_thread_gemm.h">
+      <Filter>Source Files\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\meta\single_thread_gemm_arm32.h">
+      <Filter>Source Files\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\meta\single_thread_gemm_arm64.h">
+      <Filter>Source Files\meta</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\bit_depth.h">
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\gemmlowp.h">
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\map.h">
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\output_stages.h">
+      <Filter>Source Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\profiling\instrumentation.h">
+      <Filter>Source Files\profiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\profiling\profiler.h">
+      <Filter>Source Files\profiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\test\test.h">
+      <Filter>Source Files\test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\test\test_data.h">
+      <Filter>Source Files\test</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\meta\README">
+      <Filter>Source Files\meta</Filter>
+    </None>
+  </ItemGroup>
+</Project>

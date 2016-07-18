@@ -109,9 +109,15 @@ class Allocator {
 #ifdef GEMMLOWP_USE_MEMALIGN
       storage_ = memalign(kAlignment, storage_size_);
 #else
+#ifdef _WIN32
+#define posix_memalign(p, a, s) (((*(p)) = _aligned_malloc((s), (a))), *(p) ?0 :errno)
+#endif
       if (posix_memalign(&storage_, kAlignment, storage_size_)) {
         storage_ = nullptr;
       }
+#ifdef _WIN32
+#undef posix_memalign
+#endif
 #endif
     }
 
@@ -183,7 +189,11 @@ class Allocator {
  private:
   void DeallocateStorage() {
     assert(!committed_);
+#ifdef _WIN32
+	_aligned_free(storage_);
+#else
     free(storage_);
+#endif
     storage_size_ = 0;
   }
 

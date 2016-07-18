@@ -104,7 +104,24 @@ struct AutoGlobalLock {
 //   2) It requires the compiler to assume that any value previously
 //     read from memory, may have changed. Thus it offers an alternative
 //     to using 'volatile' variables.
+#ifdef _MSC_VER
+#ifdef _AMD64_
+#define MemoryBarrier __faststorefence
+#elif defined(_IA64_)
+#define MemoryBarrier __mf
+#else
+// x86
+__forceinline void MemoryBarrier()
+{
+	long Barrier;
+	__asm {
+		xchg Barrier, eax
+	}
+}
+#endif
+#else
 inline void MemoryBarrier() { asm volatile("" ::: "memory"); }
+#endif
 
 // Profiling definitions. Two paths: when profiling is enabled,
 // and when profiling is disabled.

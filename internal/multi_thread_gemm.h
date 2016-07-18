@@ -20,7 +20,13 @@
 #define GEMMLOWP_INTERNAL_MULTI_THREAD_GEMM_H_
 
 #include <pthread.h>
+#ifndef _SC_NPROCESSORS_CONF
+#include <thread>
+#endif
+#ifdef _WIN32
+#else
 #include <unistd.h>
+#endif
 #include <vector>
 
 #include "single_thread_gemm.h"
@@ -530,9 +536,13 @@ inline int HowManyThreads(int max_num_threads, int rows, int cols, int depth) {
     // This is expensive to query so we do it only once.
     // Too bad for dynamicness. Also, we dont use the c++11 standard getter
     // because Google's coding style currently bans #include <thread_>.
+#ifdef _SC_NPROCESSORS_CONF
     static const int hardware_threads_count =
         static_cast<int>(sysconf(_SC_NPROCESSORS_CONF));
-
+#else
+	  static const int hardware_threads_count =
+		  static_cast<int>(std::thread::hardware_concurrency());
+#endif
     max_count = hardware_threads_count;
   }
 

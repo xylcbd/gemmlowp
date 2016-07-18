@@ -14,7 +14,10 @@
 
 #include "test.h"
 
+#ifdef _WIN32
+#else
 #include <unistd.h>
+#endif
 #include <array>
 #include <cstdint>
 #include <cstdlib>
@@ -1565,6 +1568,6 @@ void test() {
 }  // end namespace gemmlowp
 
 // For iOS, we need to define our own main(), so skip it here.
-#if !(defined(__APPLE__) && (TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR))
+#if defined(_WIN32) || (!(defined(__APPLE__) && (TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)))
 int main() { gemmlowp::test(); }
 #endif
